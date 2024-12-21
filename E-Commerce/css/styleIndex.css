@@ -1,0 +1,148 @@
+/* Basic Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Using Google Fonts */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f4f4f4; /* Subtle background color */
+  color: #333; /* Dark text for readability */
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Product Grid */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Consistent spacing between items */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* Centering the grid */
+  padding: 0 20px;
+}
+
+/* Product Item */
+.product {
+  flex: 1 1 calc(25% - 20px); /* Flexbox handling with margin in mind */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth hover and scale effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+  overflow: hidden; /* Ensures no overflow of elements */
+}
+
+/* Hover Effect for Product Card */
+.product:hover {
+  transform: translateY(-10px); /* Elevate the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Image Styling */
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Crop image to fit container */
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Smooth zoom-in effect */
+}
+
+/* Zoom-in on Image Hover */
+.product:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Product Title */
+.product h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Product Description */
+.product p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Product Link (Add to Cart or View Product) */
+.product a {
+  display: block;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.product a:hover {
+  background-color: #555; /* Darker on hover */
+  transform: translateY(-3px); /* Lift the button up on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product {
+      flex: 1 1 calc(33.33% - 20px); /* Adjust for tablet screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+      flex: 1 1 calc(50% - 20px); /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+      flex: 1 1 100%; /* Full width on very small screens */
+  }
+  .product-grid {
+      padding: 0 10px; /* Add padding on small screens */
+  }
+}
+
+/* Additional Container Enhancements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Fancy Load-in Animation for Grid */
+.product-grid {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards ease-out;
+}
+
+@keyframes fadeInUp {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility Enhancements */
+a:focus, button:focus {
+  outline: 2px solid #ff6347; /* Adds a visible focus outline */
+  outline-offset: 4px;
+}
+
